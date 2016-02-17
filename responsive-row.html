@@ -1,0 +1,98 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<dom-module id="responsive-row">
+	<template>
+		<style>
+			:host {
+				display: block;
+				min-width: 360px;
+			}
+
+			#layout {
+				@apply(--layout-horizontal);
+			}
+
+			#left,
+			#right {
+				@apply(--layout-flex);
+			}
+
+			#left {
+				background-color: var(--responsive-row-left, transparent);
+			}
+
+			#center {
+				margin: 0px auto;
+				background-color: var(--responsive-row-center, transparent);
+			}
+
+			#right {
+				background-color: var(--responsive-row-right, transparent);
+			}
+
+			@media (max-width: 767px) {
+				#center {
+					padding-left: var(--responsive-row-767px-padding, 15px);
+					padding-right: var(--responsive-row-767px-padding, 15px);
+					width: calc(100vw - var(--responsive-row-767px-padding, 15px) - var(--responsive-row-767px-padding, 15px));
+				}
+
+				#left,
+				#right {
+					display: none;
+				}
+			}
+
+			@media (max-width: 360px) {
+				#center {
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
+
+			@media (min-width: 768px) {
+				#center {
+					width: 750px;
+				}
+			}
+
+			@media (min-width: 992px) {
+				#center {
+					width: 970px;
+				}
+			}
+
+			@media (min-width: 1200px) {
+				#center {
+					width: 1170px;
+				}
+			}
+
+			@media print {
+				#left,
+				#right {
+					display: none;
+				}
+
+				#center {
+					margin: 0;
+					width: 100vw;
+				}
+			}
+		</style>
+		<div id="layout">
+			<div id="left"></div>
+			<div id="center">
+				<content></content>
+			</div>
+			<div id="right"></div>
+		</div>
+	</template>
+	<script>
+		Polymer(
+			{
+				is: 'responsive-row'
+			}
+		);
+	</script>
+</dom-module>

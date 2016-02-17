@@ -1,0 +1,22 @@
+{
+  "name": "responsive-row",
+  "homepage": "https://github.com/miztroh/responsive-row",
+  "authors": [
+    "Jonathan Cox <miztroh@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.4",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.2.3"
+  }
+}
